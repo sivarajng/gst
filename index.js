@@ -73,6 +73,10 @@ app.get('/',
   require('connect-ensure-login').ensureLoggedIn(),
   routes.index
 );
+// Define routes.
+app.get('/home',
+  routes.index
+);
 
 app.get('/login',
   routes.login
