@@ -1,8 +1,8 @@
 const express = require('express');
 const passport = require('passport');
 const Strategy = require('passport-local').Strategy;
-const db = require('./db');
-const routes = require('./routes');
+const db = require('./app/db');
+const routes = require('./app/routes');
 // const pg = require('pg')
 const bodyParser = require('body-parser');
 
