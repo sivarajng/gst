@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ./partials/head.ejs %>
+</head>
+<body>
+
+
+
+<% include ./partials/loginHeader.ejs %>
+
+<div class="container-fluid " style="padding-top:0px;">
+ 
+  <div class="row ">
+
+    <div class="col-sm-12" style="background: rgba(250, 250, 250, 0.7);height:600px;" >
+
+
+<form action="/querypost" method="post">
+<input placeholder="" name="sql" type="text" required="" style="    height: 100px;    width: 500px;">
+
+
+<button >Query</button>
+</form>
+-- list schema : select nspname from pg_catalog.pg_namespace;
+--list db : SELECT datname FROM pg_database WHERE datistemplate = false;
+-- lists tables in the current database : SELECT table_schema,table_name FROM information_schema.tables ORDER BY table_schema,table_name;       
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<% include ./partials/loginFooter.ejs %>
+
+</body>
+</html>

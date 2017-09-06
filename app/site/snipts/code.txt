@@ -1,0 +1,18 @@
+CREATE extension tablefunc;
+-- list schema : select nspname from pg_catalog.pg_namespace; 
+--list db : SELECT datname FROM pg_database WHERE datistemplate = false; 
+-- lists tables in the current database : SELECT table_schema,table_name FROM information_schema.tables ORDER BY table_schema,table_name;
+
+select array_to_json(array_agg(row_to_json(t)))
+    from (
+     SELECT * 
+FROM crosstab( 'SELECT username, date, attendance_state FROM fcs.attendance_rec ORDER BY 1,2') 
+     AS final_result(username character varying(30), "20170329" boolean,"20170328" boolean)
+
+    ) t
+
+
+
+<!--<% if (login_errors.length > 0) { %>
+<p style="color:red;"><%= login_errors[login_errors.length -1]%></p>
+<% }  %>-->

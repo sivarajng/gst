@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ./partials/head.ejs %>
+</head>
+<body ng-app="fcsApp">
+
+
+
+<% include ./partials/loginHeader.ejs %>
+
+<div class="container-fluid " style="padding-top:0px;">
+ 
+  <div class="row signin-bg">
+   
+   <div class="col-sm-7" >
+  
+   </div>
+    <div class="col-sm-5" style="background: rgba(250, 250, 250, 0.7);height:600px;" >
+<center>
+<md-card >
+  <md-card-header style="
+    background-color: #0288d1;
+    color: white;
+    font-size: large;
+">
+    <md-title>
+      Welcome
+    </md-title>
+  </md-card-header>
+<md-content style="padding: 10px;">
+  
+ <form action="/login" method="post">
+          <md-input-container flex="50">
+            <label style="font-family: sans-serif;">Username</label>
+            <input type="text" required="" name="username" ng-model="project.username" style="font-family: sans-serif;">
+            <div ng-messages="projectForm.username.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+         </md-input-container>
+         <br/>
+         <md-input-container flex="50">
+            <label style="font-family: sans-serif;">Password</label>
+            <input type="password" required="" name="password" ng-model="project.password" style="font-family: sans-serif;">
+            <div ng-messages="projectForm.password.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+         </md-input-container>
+         <br/>
+       
+
+  <p style="color:red;">Invalid uername password</p>
+
+
+         <md-button type="submit" class="md-raised md-primary" style="font-family: sans-serif;">Sign in</md-button>
+  </form>
+</md-content>
+</md-card>
+</center>
+
+
+       
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<% include ./partials/loginFooter.ejs %>
+
+</body>
+</html>
+
+

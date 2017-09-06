@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="fcsApp">
+
+<head>
+    <% include ./partials/head.ejs %>
+</head>
+
+<body ng-controller="fcsController">
+
+
+
+    <% include ./partials/header.ejs %>
+        <div style="display: table;width: 100%;">
+            <!-- Overlay for fixed sidebar -->
+            <div class="sidebar-overlay"></div>
+            <aside id="sidebar" class="sidebar sidebar-default open" style="background-color:#082f44;height: 600px;" role="navigation">
+                <!-- Sidebar navigation -->
+                <ul class="nav sidebar-nav">
+                    <li class="dropdown">
+                        <a class="ripple-effect dropdown-toggle" href="" ng-click="showUser()" data-toggle="dropdown">
+                            <i class="sidebar-icon md-inbox"></i> User
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/#!" tabindex="-1">
+                                    <span class="sidebar-badge"></span> View
+
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#/userAdd" ng-click="userAdd()" tabindex="-1">
+                                    <span class="sidebar-badge"></span> Add
+
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a class="ripple-effect dropdown-toggle" href="" ng-click="showAttendance()" data-toggle="dropdown">
+                            <i class="sidebar-icon md-inbox"></i> Attendance
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#" tabindex="-1">
+                                    <span class="sidebar-badge"></span> View
+
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" tabindex="-1">
+                                    <span class="sidebar-badge"></span> Edit
+
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" tabindex="-1">
+                                    <span class="sidebar-badge"></span> Generate
+
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#/">
+                            <i class="sidebar-icon md-inbox"></i> Attendance
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#/calender">
+                            <i class="sidebar-icon md-star"></i> Calender
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/settings">
+                            <i class="sidebar-icon md-send"></i> Settings
+                        </a>
+                    </li>
+
+
+
+                </ul>
+                <!-- Sidebar divider -->
+                <!-- <div class="sidebar-divider"></div> -->
+
+                <!-- Sidebar text -->
+                <!--  <div class="sidebar-text">Text</div> -->
+            </aside>
+
+            <div class="wrapper">
+                <!-- Sidebar Constructor -->
+                <div class="">
+
+                    <div class="container" style="padding-top:0px;background-color:#eeeeee;">
+
+                        <div class="row ">
+                            <div ng-view></div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <% include ./partials/footer.ejs %>
+
+</body>
+
+</html>
